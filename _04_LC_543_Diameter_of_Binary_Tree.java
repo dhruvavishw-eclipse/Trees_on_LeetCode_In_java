@@ -1,7 +1,7 @@
 import java.util.*;
 
 import org.w3c.dom.Node;
-public class _4_LC_543_Diameter_of_Binary_Tree {
+public class _04_LC_543_Diameter_of_Binary_Tree {
 
 
     public static class TreeNode {

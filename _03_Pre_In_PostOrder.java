@@ -1,5 +1,5 @@
 import java.util.*;
-public class _3_Pre_In_PostOrder {
+public class _03_Pre_In_PostOrder {
 
     public static class Node {       
         int val;
@@ -39,6 +39,19 @@ public class _3_Pre_In_PostOrder {
     }
 
 
+    public static void bfs(Node root){
+        Queue<Node> q= new LinkedList<>();
+        if(root!=null) q.add(root);
+        while(q.size()>0){
+            Node temp=q.peek();
+            if(temp.left!=null) q.add(temp.left);
+            if(temp.right!=null) q.add(temp.right);
+            System.out.print(temp.val+" ");
+            q.remove();
+        }
+    }
+
+
     public static void main(String[] RCB) {
         
          Node root=new Node(1);
@@ -58,9 +71,9 @@ public class _3_Pre_In_PostOrder {
         b.left=e;
         b.right=f;
 
-        preOrder(root);
+        // preOrder(root);
         // inOrder(root);
         // postOrder(root);
-        
+        bfs(root);
     }
 }

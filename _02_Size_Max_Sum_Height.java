@@ -1,5 +1,5 @@
 import java.util.*;
- public class _2_Size_Max_Sum_Height {
+ public class _02_Size_Max_Sum_Height {
 
      public static class Node {       
         int val;
@@ -44,6 +44,18 @@ import java.util.*;
     }
 
 
+    public static int min(Node root){
+        if(root==null) return Integer.MAX_VALUE;
+        return Math.min(root.val,Math.min(min(root.left),min(root.right)));
+    }
+
+
+    public static int product(Node root){
+        if(root==null) return 1;
+        return root.val * product(root.left) * product(root.right);
+    }
+
+
     public static void  main(String [] RCB){
       Node root=new Node(1);
         Node a=new Node(2);
@@ -61,12 +73,15 @@ import java.util.*;
 
         b.left=e;
         b.right=f;
+        
         // System.out.println(root );
 
         // preorder(root);
         // System.out.println(size(root));
         // System.out.println(sum(root));
         // System.out.println(maxValue(root));
-        System.out.println(height(root));
+        // System.out.println(height(root));
+        // System.out.println(min(root));
+        System.out.println(product(root));
     }
 }

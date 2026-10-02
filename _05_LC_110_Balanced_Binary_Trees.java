@@ -1,5 +1,5 @@
 import java.util.*;
-public class _5_LC_110_Balanced_Binary_Trees {
+public class _05_LC_110_Balanced_Binary_Trees {
 
 
     public static class TreeNode {

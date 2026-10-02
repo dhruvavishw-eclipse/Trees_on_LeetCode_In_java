@@ -1,5 +1,5 @@
 import java.util.*;
-public class _6_LC_100_Same_Tree {
+public class _06_LC_100_Same_Tree {
 
     public static class TreeNode {
       int val;
