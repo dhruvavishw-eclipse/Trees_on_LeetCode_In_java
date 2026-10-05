@@ -30,7 +30,9 @@ public class _17_LC_114_Flatten_Binary_Tree_to_Linked_List {
         TreeNode e=new TreeNode(6);
         b.right=e;
 
-      flatten(root);
+    //   flatten(root);
+    flatten2(root);
+    
      
     }
 
@@ -56,5 +58,25 @@ public class _17_LC_114_Flatten_Binary_Tree_to_Linked_List {
         }
         return;
     }
+
+
+    public static void flatten2(TreeNode root){
+        TreeNode curr=root;  // TC O(n);
+        while(curr!=null){
+            if(curr.left!=null){
+                TreeNode pred=curr.left;
+
+                while(pred.right!=null){
+                    pred=pred.right;
+                }
+
+                pred.right=curr.right;
+                curr.right=curr.left;
+                curr.left=null;
+            }
+            curr=curr.right;
+        }
+    }
+
 
 }
